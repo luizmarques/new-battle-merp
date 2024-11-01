@@ -313,15 +313,3 @@ export class Character {
         }
     }
 }
-
-class Cpf {
-    cpf: string;
-
-    constructor(cpf: string) {
-        this.cpf = cpf;
-    }
-
-    validate(): boolean {
-        return true;
-    }
-}
