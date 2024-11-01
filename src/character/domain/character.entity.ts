@@ -1,5 +1,6 @@
 import type { UUIDTypes } from "uuid/dist/cjs/_types";
 import { Uuid } from "../../shared/domain/value-objects/uuid.vo";
+import { CharacterValidatorFacry } from "./character.validator";
 
 // Character Information
 export type CharacterInformationProps = {
@@ -297,6 +298,11 @@ export class Character {
     deactivateCharacter(): void {
         this.is_active =false;
     }
+
+    static validate(entity: Character) {
+        const validator = CharacterValidatorFacry.create();
+        return validator.validate(entity);
+    }   
 
     toJSON() {
         return {
