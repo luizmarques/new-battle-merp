@@ -21,7 +21,7 @@
   "workbench.layoutControl.enabled": false,
   "window.autoDetectColorScheme": true,
   "workbench.preferredDarkColorTheme": "poimandres",
-  "workbench.preferredLightColorTheme": "Min Light",
+  "workbench.preferredLightColorTheme": "Default Dark Modern",
   "workbench.editor.empty.hint": "hidden",
   "editor.hideCursorInOverviewRuler": true,
   "editor.minimap.enabled": false,
