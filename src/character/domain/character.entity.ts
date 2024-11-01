@@ -1,6 +1,9 @@
+import type { UUIDTypes } from "uuid/dist/cjs/_types";
+import { Uuid } from "../../shared/domain/value-objects/uuid.vo";
+
 // Character Information
 export type CharacterInformationProps = {
-    character_id?: string;
+    character_id?: Uuid;
     characterName: string;
     race: string;
     profession: string;
@@ -225,7 +228,7 @@ export class Character {
     created_by?: string;
 
     constructor(props: CharacterConstructorProps) {
-        this.characterInformation = props.characterInformation ?? { characterName: '', race: '', profession: '', level: 0, experience: 0, equipment: '', magic: '', settings: '' };
+        this.characterInformation = props.characterInformation ?? { character_id: new Uuid(), characterName: '', race: '', profession: '', level: 0, experience: 0, equipment: '', magic: '', settings: '' };
         this.characterAttributes = props.characterAttributes ?? { realmpower: 0, powerpoints: 0, basehp: 0, totalhp: 0, actualhp: 0, attributes: '', temporaryAbbr: '', potentialAbbr: '', developmentAbbr: '', baseAbbr: '', raceAbbr: '', totalAbbr: '', constitution: 0, agility: 0, selfdiscipline: 0, memory: 0, reasoning: 0, strength: 0, quickness: 0, presence: 0, empathy: 0, intuition: 0 };
         this.characterDefenses = props.characterDefenses ?? {};
         this.characterLanguages = props.characterLanguages ?? {};
@@ -297,7 +300,7 @@ export class Character {
 
     toJSON() {
         return {
-            characterInformation: this.characterInformation,
+            characterInformation: {...this.characterInformation, ...this.characterInformation.character_id},
             characterAttributes: this.characterAttributes,
             characterDefenses: this.characterDefenses,
             characterLanguages: this.characterLanguages,

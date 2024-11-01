@@ -1,3 +1,4 @@
+import { Uuid } from '../../../shared/domain/value-objects/uuid.vo';
 import { 
   Character,
   CharacterAttributesProps,
@@ -10,12 +11,12 @@ import {
   CharacterSpellsProps,
   CharacterCalculationsProps,
   CharacterAppearanceProps,
-  CharacterCreateCommand,
 } from '../character.entity';
 
 const date = new Date();
 
 const mockCharacterInformation: CharacterInformationProps = {
+  character_id: new Uuid() || undefined,
   characterName: 'Test Character',
   race: 'Test Race',
   profession: 'Test Profession',
@@ -181,16 +182,6 @@ const mockCharacterAppearance: CharacterAppearanceProps = {
   backgroundcolordesc: 'Test Background Color Desc',
 };
 
-// jest.mock('../character.entity', () => {
-//   return {
-//     Character: jest.fn().mockImplementation(() => {
-//       return {
-//         createCharacterCommand: jest.fn(),
-//       };
-//     }),
-//   };
-// });
-
 describe('Character Entity', () => {
   beforeEach(() => {
     Character.create = jest.fn().mockImplementation(Character.create);
@@ -214,9 +205,11 @@ describe('Character Entity', () => {
         created_by: 'Test Creator',
       });
 
+      const uuid = character.characterInformation.character_id;
+
       expect(character).toBeInstanceOf(Character);
       expect(character.characterInformation).toEqual(mockCharacterInformation);
-      expect(character.characterInformation.character_id).toBeUndefined();
+      expect(uuid).toBeInstanceOf(Uuid);
       expect(character.characterAttributes).toEqual(mockCharacterAttributes);
       expect(character.characterDefenses).toEqual(mockCharacterDefenses);
       expect(character.characterLanguages).toEqual(mockCharacterLanguages);
@@ -598,7 +591,8 @@ describe('Character Entity', () => {
       });
   
       const characterJSON = character.toJSON();
-      expect(characterJSON.characterInformation).toEqual(mockCharacterInformation);
+      const { id, ...characterInformationWithoutId } = characterJSON.characterInformation;
+      expect(characterInformationWithoutId).toEqual(mockCharacterInformation);
       expect(characterJSON.characterAttributes).toEqual(mockCharacterAttributes);
       expect(characterJSON.characterDefenses).toEqual(mockCharacterDefenses);
       expect(characterJSON.characterLanguages).toEqual(mockCharacterLanguages);
@@ -636,4 +630,32 @@ describe('Character Entity', () => {
       expect(Character.create).toHaveBeenCalledTimes(1);
     });
   });
-}); 
+
+  describe("characterInformation.character_id field", () => {
+    const arrange = [
+      { character_id: null }, 
+      { character_id: null }, 
+      { character_id: new Uuid() }
+    ];
+
+    it.each(arrange)("id = %j", ({character_id}) => {
+      const character = new Character({
+        characterInformation: {
+          character_id: character_id || new Uuid(),
+          characterName: 'Test Character',
+          race: 'Test Race',
+          profession: 'Test Profession',
+          level: 10,
+          experience: 1000,
+          equipment: 'Test Equipment',
+          magic: 'Test Magic',
+          settings: 'Test Settings',
+        },
+      });
+      expect(character.characterInformation.character_id).toBeInstanceOf(Uuid);
+      if(character_id instanceof Uuid) {
+        expect(character.characterInformation.character_id).toEqual(character_id);
+      }
+    });
+  });
+});
