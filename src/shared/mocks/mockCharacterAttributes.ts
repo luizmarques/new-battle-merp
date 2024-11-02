@@ -1,4 +1,4 @@
-import type { CharacterAttributes } from "../../character/domain/characterAttributes";
+import type { CharacterAttributes } from "../../character/domain/character-attributes/characterAttributes";
 
 export const mockCharacterAttributes: CharacterAttributes = {
   changeCharacterAttributes(props: CharacterAttributes): void {

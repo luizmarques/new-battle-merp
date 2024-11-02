@@ -1,7 +1,8 @@
-import { Character } from "../character.entity";
-import { CharacterAttributes } from "../characterAttributes";
 import { mockCharacterAttributes } from "../../../shared/mocks/mockCharacterAttributes";
 import { mockCharacterCreate } from "../../../shared/mocks/mockCharacterCreate";
+import { CharacterAttributes } from "../character-attributes/characterAttributes";
+import { Character } from "../character-entity/character.entity";
+
 
 describe("CharacterAttributes Unit Tests", () => {
   let character: Character;

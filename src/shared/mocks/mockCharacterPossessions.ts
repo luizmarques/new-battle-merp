@@ -1,4 +1,4 @@
-import type { CharacterPossessions } from "../../character/domain/characterPossessions";
+import type { CharacterPossessions } from "../../character/domain/character-possessions/characterPossessions";
 
 export const mockCharacterPossessions: CharacterPossessions = {
   weight: 10,

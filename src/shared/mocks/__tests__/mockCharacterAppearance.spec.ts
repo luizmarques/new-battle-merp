@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { CharacterAppearance } from "../../../character/domain/characterAppearance";
+import { CharacterAppearance } from "../../../character/domain/character-appearance/characterAppearance";
 import { mockCharacterAppearance } from "../mockCharacterAppearance";
 
 describe("CharacterAppearance Unit Tests", () => {

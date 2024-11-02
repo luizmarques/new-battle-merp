@@ -1,4 +1,4 @@
-import type { CharacterAppearance } from "../../character/domain/characterAppearance";
+import type { CharacterAppearance } from "../../character/domain/character-appearance/characterAppearance";
 
 export const mockCharacterAppearance: CharacterAppearance = {
   changeCharacterAppearance(props: CharacterAppearance): void {

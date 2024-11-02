@@ -1,4 +1,4 @@
-import type { CharacterCreateCommand } from "../../character/domain/character.entity";
+import type { CharacterCreateCommand } from "../../character/domain/character-entity/character.entity";
 import { mockCharacterAppearance } from "./mockCharacterAppearance";
 import { mockCharacterAttributes } from "./mockCharacterAttributes";
 import { mockCharacterCalculations } from "./mockCharacterCalculations";

@@ -1,4 +1,4 @@
-import type { CharacterMiscellaneous } from "../../character/domain/characterMiscellaneous";
+import type { CharacterMiscellaneous } from "src/character/domain/character-miscellaneous/characterMiscellaneous";
 
 export const mockCharacterMiscellaneous: CharacterMiscellaneous = {
   changeCharacterMiscellaneous(props: CharacterMiscellaneous): void {

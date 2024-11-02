@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { CharacterInformation } from "../characterInformation";
+import { CharacterInformation } from "../character-information/characterInformation";
 import { mockCharacterInformation } from "../../../shared/mocks/mockCharacterInformation";
 
 describe("CharacterInformation Unit Tests", () => {

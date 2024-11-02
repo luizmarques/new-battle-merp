@@ -1,4 +1,4 @@
-import type { CharacterSpells } from "../../character/domain/characterSpells";
+import type { CharacterSpells } from "../../character/domain/character-spells/characterSpells";
 
 export const mockCharacterSpells: CharacterSpells = {
   changeCharacterSpells(props: CharacterSpells): void {

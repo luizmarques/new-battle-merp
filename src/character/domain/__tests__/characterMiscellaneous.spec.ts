@@ -1,6 +1,6 @@
 import "reflect-metadata";
-import { CharacterMiscellaneous } from "../characterMiscellaneous";
 import { mockCharacterMiscellaneous } from "../../../shared/mocks/mockCharacterMiscellaneous";
+import { CharacterMiscellaneous } from "../character-miscellaneous/characterMiscellaneous";
 
 describe("CharacterMiscellaneous Unit Tests", () => {
   let characterMiscellaneous: CharacterMiscellaneous;

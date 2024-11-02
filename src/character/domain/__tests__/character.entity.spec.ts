@@ -1,7 +1,7 @@
 import { Uuid } from "../../../shared/domain/value-objects/uuid.vo";
 import "reflect-metadata";
-import { Character } from "../character.entity";
-import { CharacterInformation } from "../characterInformation";
+import { Character } from "../character-entity/character.entity";
+import { CharacterInformation } from "../character-information/characterInformation";
 import { mockCharacterInformation } from "../../../shared/mocks/mockCharacterInformation";
 import { mockCharacterAttributes } from "../../../shared/mocks/mockCharacterAttributes";
 import { mockCharacterDefenses } from "../../../shared/mocks/mockCharacterDefenses";
@@ -12,7 +12,7 @@ import { mockCharacterSpells } from "../../../shared/mocks/mockCharacterSpells";
 import { mockCharacterChecks } from "../../../shared/mocks/mockCharacterChecks";
 import { mockCharacterCalculations } from "../../../shared/mocks/mockCharacterCalculations";
 import { mockCharacterAppearance } from "../../../shared/mocks/mockCharacterAppearance";
-import { CharacterAttributes } from "../characterAttributes";
+import { CharacterAttributes } from "../character-attributes/characterAttributes";
 
 const date = new Date();
 

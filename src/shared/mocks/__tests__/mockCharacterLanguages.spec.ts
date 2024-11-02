@@ -1,4 +1,4 @@
-import { CharacterLanguages } from "../../../character/domain/characterLanguages";
+import { CharacterLanguages } from "../../../character/domain/character-languages/characterLanguages";
 import { mockCharacterLanguages } from "../mockCharacterLanguages";
 
 describe("mockCharacterLanguages Unit Tests", () => {
@@ -10,7 +10,12 @@ describe("mockCharacterLanguages Unit Tests", () => {
 
   it("should change character languages", () => {
     const characterLanguages = new CharacterLanguages(mockCharacterLanguages);
-    characterLanguages.changeCharacterLanguages({ languages: "New Languages",  });
+    characterLanguages.changeCharacterLanguages({
+      languages: "New Languages",
+      changeCharacterLanguages: function (props: CharacterLanguages): void {
+        throw new Error("Function not implemented.");
+      }
+    });
     expect(characterLanguages.languages).toBe("New Languages");
   });
 });

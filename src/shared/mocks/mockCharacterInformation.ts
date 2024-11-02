@@ -1,5 +1,5 @@
 import { Uuid } from '../domain/value-objects/uuid.vo';
-import type { CharacterInformation } from '../../character/domain/characterInformation';
+import type { CharacterInformation } from '../../character/domain/character-information/characterInformation';
 
 
 export const mockCharacterInformation: CharacterInformation = {

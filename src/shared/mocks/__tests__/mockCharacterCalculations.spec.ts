@@ -1,4 +1,4 @@
-import { CharacterCalculations } from "../../../character/domain/characterCalculations";
+import { CharacterCalculations } from "../../../character/domain/character-calculations/characterCalculations";
 import { mockCharacterCalculations } from "../mockCharacterCalculations";
 
 describe("mockCharacterCalculations Unit Tests", () => {
@@ -10,7 +10,12 @@ describe("mockCharacterCalculations Unit Tests", () => {
 
   it("should change character calculations", () => {
     const characterCalculations = new CharacterCalculations(mockCharacterCalculations);
-    characterCalculations.changeCharacterCalculations({ devAbbr: "New Dev Abbr" });
+    characterCalculations.changeCharacterCalculations({
+      devAbbr: "New Dev Abbr",
+      changeCharacterCalculations: function (props: CharacterCalculations): void {
+        throw new Error("Function not implemented.");
+      }
+    });
     expect(characterCalculations.devAbbr).toBe("New Dev Abbr");
   });
 });

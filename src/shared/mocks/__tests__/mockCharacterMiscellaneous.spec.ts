@@ -1,4 +1,4 @@
-import { CharacterMiscellaneous } from "../../../character/domain/characterMiscellaneous";
+import { CharacterMiscellaneous } from "../../../character/domain/character-miscellaneous/characterMiscellaneous";
 import { mockCharacterMiscellaneous } from "../mockCharacterMiscellaneous";
 
 describe("mockCharacterMiscellaneous Unit Tests", () => {
@@ -10,7 +10,12 @@ describe("mockCharacterMiscellaneous Unit Tests", () => {
 
   it("should change character miscellaneous", () => {
     const characterMiscellaneous = new CharacterMiscellaneous(mockCharacterMiscellaneous);
-    characterMiscellaneous.changeCharacterMiscellaneous({ miscellaneous: "New Miscellaneous",  });
+    characterMiscellaneous.changeCharacterMiscellaneous({
+      miscellaneous: "New Miscellaneous",
+      changeCharacterMiscellaneous: function (props: CharacterMiscellaneous): void {
+        throw new Error("Function not implemented.");
+      }
+    });
     expect(characterMiscellaneous.miscellaneous).toBe("New Miscellaneous");
   });
 });

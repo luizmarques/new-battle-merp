@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { CharacterLanguages } from "../characterLanguages";
+import { CharacterLanguages } from "../character-languages/characterLanguages";
 import { mockCharacterLanguages } from "../../../shared/mocks/mockCharacterLanguages";
 
 describe("CharacterLanguages Unit Tests", () => {

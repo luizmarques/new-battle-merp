@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { CharacterAppearance } from "../characterAppearance";
+import { CharacterAppearance } from "../character-appearance/characterAppearance";
 import { mockCharacterAppearance } from "../../../shared/mocks/mockCharacterAppearance";
 
 describe("CharacterAppearance Unit Tests", () => {
@@ -16,7 +16,10 @@ describe("CharacterAppearance Unit Tests", () => {
 
   it("should create a new characterAppearance", async () => {
     expect(characterAppearance).toBeInstanceOf(CharacterAppearance);
-    CharacterAppearance.create();
+    CharacterAppearance.create({
+      ...mockCharacterAppearance,
+      changeCharacterAppearance: jest.fn(),
+    });
     expect(CharacterAppearance.create).toHaveBeenCalled();
     CharacterAppearance.validate(characterAppearance);
     expect(validateSpy).toHaveBeenCalled();

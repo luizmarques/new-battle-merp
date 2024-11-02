@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { CharacterPossessions } from "../characterPossessions";
+import { CharacterPossessions } from "../character-possessions/characterPossessions";
 import { mockCharacterPossessions } from "../../../shared/mocks/mockCharacterPossessions";
 
 describe("CharacterPossessions Unit Tests", () => {

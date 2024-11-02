@@ -1,4 +1,4 @@
-import type { CharacterLanguages } from "../../character/domain/characterLanguages";
+import type { CharacterLanguages } from "../../character/domain/character-languages/characterLanguages";
 
 export const mockCharacterLanguages: CharacterLanguages = {
   languages: 'Test Languages',

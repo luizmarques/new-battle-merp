@@ -1,4 +1,4 @@
-import type { CharacterDefenses } from "../../character/domain/characterDefenses";
+import type { CharacterDefenses } from "../../character/domain/character-defenses/characterDefenses";
 
 export const mockCharacterDefenses: CharacterDefenses = {
   changeCharacterDefenses: (props: CharacterDefenses) => {},

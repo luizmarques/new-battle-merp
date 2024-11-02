@@ -1,4 +1,4 @@
-import type { CharacterChecks } from "../../character/domain/characterChecks";
+import type { CharacterChecks } from "../../character/domain/character-checks/characterChecks";
 
 export const mockCharacterChecks: CharacterChecks = {
   changeCharacterChecks(props: CharacterChecks): void {

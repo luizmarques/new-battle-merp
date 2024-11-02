@@ -1,4 +1,4 @@
-import { CharacterChecks } from "../../../character/domain/characterChecks";
+import { CharacterChecks } from "../../../character/domain/character-checks/characterChecks";
 import { mockCharacterChecks } from "../mockCharacterChecks";
 
 describe("mockCharacterChecks Unit Tests", () => {
@@ -10,7 +10,12 @@ describe("mockCharacterChecks Unit Tests", () => {
 
   it("should change character checks", () => {
     const characterChecks = new CharacterChecks(mockCharacterChecks);
-    characterChecks.changeCharacterChecks({ ...mockCharacterChecks, constitutioncheck: 20 });
+    characterChecks.changeCharacterChecks({
+      ...mockCharacterChecks, constitutioncheck: 20,
+      changeCharacterChecks: function (props: CharacterChecks): void {
+        throw new Error("Function not implemented.");
+      }
+    });
     expect(characterChecks.constitutioncheck).toBe(20);
   });
 });

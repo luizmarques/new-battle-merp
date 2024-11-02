@@ -1,5 +1,5 @@
 import "reflect-metadata";
-import { CharacterDefenses } from "../characterDefenses";
+import { CharacterDefenses } from "../character-defenses/characterDefenses";
 import { mockCharacterDefenses } from "../../../shared/mocks/mockCharacterDefenses";
 
 describe("CharacterDefenses Unit Tests", () => {

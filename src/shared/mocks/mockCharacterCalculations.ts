@@ -1,4 +1,4 @@
-import type { CharacterCalculations } from "../../character/domain/characterCalculations";
+import type { CharacterCalculations } from "../../character/domain/character-calculations/characterCalculations";
 
 export const mockCharacterCalculations: CharacterCalculations = {
   changeCharacterCalculations(props: CharacterCalculations): void {
